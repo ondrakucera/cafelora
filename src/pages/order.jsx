@@ -4,30 +4,22 @@ import "./index.css";
 import "./order.css";
 import { Header } from "../components/Header/Header.jsx";
 import { Footer } from "../components/Footer/Footer.jsx";
+import { Order } from "../components/Order/Order.jsx";
+
+const response = await fetch(
+  "http://localhost:4000/api/drinks?filter=ordered:eq:true&select=id,name,image",
+);
+const body = await response.json();
+const orderItems = body.data.map((orderItem) => ({
+  ...orderItem,
+  image: `http://localhost:4000${orderItem.image}`,
+}));
 
 document.querySelector("#root").innerHTML = render(
   <div className="page">
     <div className="page">
       <Header />
-
-      <main className="order">
-        <div className="container order__content">
-          <h1>Vaše objedávnka</h1>
-          <p className="empty-order">Zatím nemáte nic objednáno</p>
-          <div className="order__items">
-            <div className="order-item">
-              <img src="/cups/espresso.png" className="order-item__image" />
-              <div className="order-item__name">Espresso</div>
-            </div>
-
-            <div className="order-item">
-              <img src="/cups/doppio.png" className="order-item__image" />
-              <div className="order-item__name">Doppio</div>
-            </div>
-          </div>
-        </div>
-      </main>
-
+      <Order items={orderItems} />
       <Footer />
     </div>
   </div>,
