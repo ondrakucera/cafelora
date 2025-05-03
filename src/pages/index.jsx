@@ -9,7 +9,7 @@ import { Contact } from "../components/Contact/Contact.jsx";
 import { Footer } from "../components/Footer/Footer.jsx";
 
 document.querySelector("#root").innerHTML = render(
-  <div className="page">
+  <div className="page" id="home">
     <Header />
     <main>
       <Banner />
