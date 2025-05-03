@@ -6,6 +6,7 @@ import { Banner } from "../components/Banner/Banner.jsx";
 import { Menu } from "../components/Menu/Menu.jsx";
 import { Gallery } from "../components/Gallery/Gallery.jsx";
 import { Contact } from "../components/Contact/Contact.jsx";
+import { Footer } from "../components/Footer/Footer.jsx";
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
@@ -16,13 +17,6 @@ document.querySelector('#root').innerHTML = render(
       <Gallery />
       <Contact />
     </main>
-
-    <footer>
-      <div className="container">
-        <div className="footer__content">
-          Café Lóra je tréningový projekt v rámci Czechitas kurzu JavaScript 2
-        </div>
-      </div>
-    </footer>
+    <Footer />
   </div>
 );
