@@ -2,19 +2,13 @@ import { render } from '@czechitas/render';
 import '../global.css';
 import './index.css';
 import { Header } from "../components/Header/Header.jsx";
+import { Banner } from "../components/Banner/Banner.jsx";
 
 document.querySelector('#root').innerHTML = render(
   <div className="page">
     <Header />
     <main>
-      <section className="banner">
-        <div className="container">
-          <div className="banner__content">
-            <h1>Přijď to ochutnat!</h1>
-            <p>Nabízíme kvalitní kávu, útulné prostředí a perfektní servis.</p>
-          </div>
-        </div>
-      </section>
+      <Banner />
       <section className="menu">
         <div className="container">
           <h2>Naše nabídka</h2>
